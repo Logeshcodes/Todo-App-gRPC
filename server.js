@@ -20,7 +20,7 @@ let idCounter = 1;
 const todoService = {
   CreateTodo: (call, callback) => {
     const todo = {
-      id: String(idCounter++),
+      id: String(idCounter++),                      // post - increment
       title: call.request.title,
       description: call.request.description,
     };

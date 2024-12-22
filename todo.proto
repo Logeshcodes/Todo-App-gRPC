@@ -18,6 +18,9 @@ message TodoResponse {
   string description = 3;
 }
 
+
+// Whole todo list
+
 message TodoList {
   repeated TodoResponse todos = 1;
 }
