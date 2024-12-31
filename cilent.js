@@ -15,17 +15,21 @@ const todoProto = grpc.loadPackageDefinition(packageDefinition).todo;
 // Create a client instance
 const client = new todoProto.TodoService(
   "localhost:5000",
+
   grpc.credentials.createInsecure()
 );
 
 // Create a new To-Do
 client.CreateTodo({ title: "Learn gRPC", description: "Build a To-Do app with gRPC" }, (err, response) => {
+
   if (err) {
     console.error("Error creating To-Do:", err);
     return;
+
   }
   console.log("Created To-Do:", response);
 });
+
 // client.CreateTodo({ title: "Learn Node", description: "Build a big project" }, (err, response) => {
 //   if (err) {
 //     console.error("Error creating To-Do:", err);
@@ -37,6 +41,9 @@ client.CreateTodo({ title: "Learn gRPC", description: "Build a To-Do app with gR
 
 
 // Fetch all To-Dos
+
+
+
 client.GetTodos({}, (err, response) => {
   if (err) {
     console.error("Error fetching To-Dos:", err);

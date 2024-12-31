@@ -1,6 +1,13 @@
+
+// gRPC ===> protocol buffer schema for a simple To-Do list application
+
+
 syntax = "proto3";
 
-package todo;
+/*
+*   namespace for the protocol buffer messages and services 
+*/
+package todo;   
 
 service TodoService {
   rpc CreateTodo (TodoRequest) returns (TodoResponse);
